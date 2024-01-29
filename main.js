@@ -1,12 +1,6 @@
 /* Vanilla JS Demo */
 const firebaseConfig = {
-  apiKey: "AIzaSyCnilwm_Sh7GD4HgsDtY1i-9jIoV3mI9JA",
-  authDomain: "server-monitoring-db.firebaseapp.com",
-  databaseURL: "https://server-monitoring-db-default-rtdb.firebaseio.com",
-  projectId: "server-monitoring-db",
-  storageBucket: "server-monitoring-db.appspot.com",
-  messagingSenderId: "202668882586",
-  appId: "1:202668882586:web:0f2fec01799e79a2e47d23"
+/* Credentials */
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

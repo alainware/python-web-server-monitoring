@@ -1,0 +1,16 @@
+{
+  "name": "python-web-server-monitoring",
+  "version": "1.0.0",
+  "description": "Web server monitoring using Python. This project implements a basic clustering model for determining the status of a web server.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.7.2",
+    "firebase-admin": "^12.0.0"
+  }
+}

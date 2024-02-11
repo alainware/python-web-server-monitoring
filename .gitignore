@@ -4,3 +4,5 @@ logs
 index-deprecated.js
 get-server-full-data.py
 monitoring.ipynb
+package-lock.json
+package.json

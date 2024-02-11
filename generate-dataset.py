@@ -1,5 +1,6 @@
 import psutil
 import time
+import csv
 
 def get_system_info():
     active_proc = len(list(psutil.process_iter()))
@@ -33,7 +34,21 @@ def get_system_info():
         'swap_mem_percent': swap_mem.percent
     }
 
+csv_file_path = 'system_info.csv'
+
+# Escribir encabezados del CSV
+with open(csv_file_path, 'w', newline='') as csvfile:
+    fieldnames = get_system_info().keys()
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+
 while True:
     system_info = get_system_info()
+    
+    # Escribir la información en el CSV
+    with open(csv_file_path, 'a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writerow(system_info)
+    
     print(system_info)
     time.sleep(2)

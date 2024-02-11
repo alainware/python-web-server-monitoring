@@ -6,7 +6,7 @@ firebase_admin.initialize_app(cred, {"databaseURL": "https://server-monitoring-d
 root = db.reference("/")
 print(root.get())
 # set operation
-db.reference("/cpu_usage").set(10)
-db.reference("/disk_usage").set(50)
+db.reference("/cpu_usage").set(50)
+db.reference("/disk_usage").set(13)
 print(root.get())
 print(db.reference("/cpu_usage").get())

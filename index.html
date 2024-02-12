@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,21 +12,181 @@
     />
   </head>
   <body>
-    <h1 class="text-center">TechGuardian-AI</h1>
-    <div class="text-center">
-      <p>
-        Uso de CPU:
-        <span class="badge rounded-pill text-bg-primary" id="cpu"></span>
-      </p>
-      <p>
-        Uso de Disco Duro:
-        <span class="badge rounded-pill text-bg-primary" id="disk"></span>
-      </p>
-      <p>
-        Prediccion de falla:
-        <span id="failure"></span>
-      </p>
+    <div class="container mt-10">
+      <h1 class="text-center">TechGuardian-AI</h1>
     </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <div
+            id="cpu_percent_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="failure_warning_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="active_proc_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="cpu_ctx_switches_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="cpu_interrupts_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="cpu_soft_interrupts_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="cpu_syscalls_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="cpu_count_logical_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="cpu_count_physical_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="mem_available_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="mem_used_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="mem_percent_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="disk_total_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="disk_used_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="disk_free_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="disk_percent_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="swap_mem_used_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="swap_mem_free_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div
+            id="swap_mem_percent_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+        <div class="col">
+          <div
+            id="uptime_container"
+            class="border border-5 border-secondary rounded container"
+            style="height: 300px"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <br />
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
       <div
         id="liveToast"
@@ -55,6 +215,7 @@
     ></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
